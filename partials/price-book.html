@@ -1,0 +1,8 @@
+﻿<div class="row">
+    <div class="col-xs-12 col-sm-2">Select a price book: </div>
+    <div class="col-xs-12 col-sm-10">
+        <select ng-model="selectedPriceBook" ng-options="pb.name for pb in pricebooks" ng-change="selectPriceBook()">
+            <option value="value">text</option>
+        </select>
+    </div>
+</div>

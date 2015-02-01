@@ -1,0 +1,51 @@
+﻿<div class="row text-right">
+    <div class="col-xs-12">
+        Total cart value: {{total | currency}}
+    </div>
+</div>
+
+<div class="row">
+    <div ng-repeat="line in lineItems" class="col-xs-12">
+        <h4>{{line.Product.name}}</h4>
+        <div class="row">
+            <div class="col-xs-12">
+                Price:
+                <span ng-class="{'label-no-discount':!line.Discount, 'label-discounted':line.Discount}">{{line.Product.price | currency}}</span>
+                <span ng-hide="!line.Discount" class="label-new-price">{{line.Product.price*(1-line.Discount/100) | currency}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2">
+                <label for="qtyField_{{line.Product.id}}" class="col-xs-3 input-sm">Quantity:</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="number" class="form-control input-sm" id="qtyField_{{line.Product.id}}"
+                       placeholder="0" ng-model="line.Quantity" ng-change="updateTotal()" pattern="\d*"
+                       min="1" />
+            </div>
+            <div class="col-xs-2">
+                <label for="discountField_{{line.Product.id}}" class="col-xs-3 input-sm">Discount:</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="number" class="form-control input-sm" id="discountField_{{line.Product.id}}"
+                       placeholder="0" ng-model="line.Discount" ng-change="updateTotal()"
+                       min="0" max="100" pattern="\d*" /> 
+            </div>
+            <div class="col-xs-4">
+                <button class="btn btn-product btn-red" ng-click="removeFromCart(line)"><span class="icon-utility-error"></span> Remove</button>
+            </div> 
+        </div>
+        <hr />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-9">
+        <span ng-show="disableSubmit" ng-class="{'green':submitSuccess, 'red':!submitSuccess}">{{submitMsg}}</span>
+    </div>
+    <div class="col-xs-3">
+        <button class="btn btn-warning pull-right" ng-click="submitOrder()" ng-class="{disabled : disableSubmit}">
+            Submit Order
+        </button>
+    </div>
+</div>

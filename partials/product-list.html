@@ -1,0 +1,25 @@
+﻿<div class="row text-right">
+    <div class="col-xs-12">
+        Items in cart: {{totalItems}} ({{purchasedTotal | currency}})
+        <a href="" ng-click="goToCart()"> Go To Cart &gt;</a>
+    </div>
+</div>
+
+<div class="row">
+    <input type="text" ng-model="query" placeholder="Search" class="form-control" />
+</div>
+
+<div class="row">
+    <div ng-repeat="product in products | filter : query" class="col-xs-12 col-md-4 col-lg-2">
+        <div><a href="" ng-click="productDetails(product.id)">{{product.name}}</a></div>
+        <div>{{product.description}}</div>
+        <div>{{product.price | currency}}</div>
+        <button class="btn btn-product btn-green" ng-class="{hidden : product.inCart}" ng-click="addToCart(product)">
+            <span class="icon-utility-add"></span> Select
+        </button>
+        <button class="btn btn-product btn-red" ng-class="{hidden : !product.inCart}" ng-click="removeFromCart(product)">
+            <span class="icon-utility-error"></span> Remove
+        </button>
+        <hr />
+    </div>
+</div>

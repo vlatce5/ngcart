@@ -1,0 +1,23 @@
+﻿body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.btn-green {
+  background-color: greenyellow;
+}
+.btn-red {
+  background-color: orangered;
+  color: white;
+}
+.label-discounted {
+  text-decoration: line-through;
+}
+.label-new-price {
+  color: cornflowerblue;
+}
+.red {
+  color: orangered;
+}
+.green {
+  color: lawngreen;
+}
+/*# sourceMappingURL=app.css.map */

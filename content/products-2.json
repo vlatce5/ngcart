@@ -1,0 +1,32 @@
+﻿[
+    {
+        "id": 2.1,
+        "name": "First Product",
+        "description": "Lorem ipsum",
+        "price": 100
+    },
+    {
+        "id": 2.2,
+        "name": "Second Product",
+        "description": "Lorem ipsum",
+        "price": 100
+    },
+    {
+        "id": 2.3,
+        "name": "Third Product",
+        "description": "Lorem ipsum",
+        "price": 100
+    },
+    {
+        "id": 2.4,
+        "name": "Sixt Product",
+        "description": "Lorem ipsum",
+        "price": 100
+    },
+    {
+        "id": 2.5,
+        "name": "FIfth Product",
+        "description": "Lorem ipsum",
+        "price": 100
+    }
+]
